@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        $('div').hide(1000).show(1000).fadeOut(1000)
+        console.log($('div').get(0));
+        console.log($.isEmptyObject({nome: 'igor'}));
+        console.log(jQuery.inArray(3, [1,2,3]));
+
+        $.fn.trocarCss = function (property, value) {
+            this.css(property, value)
+            return this
+        }
+
+        $('body').trocarCss('background-color', 'red').fadeOut(10000)
+    </script>
+</body>
