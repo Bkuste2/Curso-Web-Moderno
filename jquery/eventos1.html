@@ -18,8 +18,46 @@
     <div id='posicao'></div>
     <div id='cliques'>Cliques: 0</div>
     <input type="text" placeholder="Cor de Background">
+    <input type="color" placeholder="Cor de Background">
 
     <script>
-        // ...
+        const mostrarPosicaoDoMouse = e => {
+            $('#posicao').html(`x: ${e.clientX}`).append(` y: ${e.clientY}`)
+        }
+
+        $('body').on('mousemove', mostrarPosicaoDoMouse)
+        $('#posicao').mouseover(e => {
+            $('body').off('mousemove',mostrarPosicaoDoMouse)
+        })
+        
+        $('#posicao').mouseleave(e => {
+            // $('body').on('mousemove', mostrarPosicaoDoMouse)
+            $('body').mousemove(mostrarPosicaoDoMouse)
+        })
+
+        let cliques = 0
+        const mostrarQuantidadeDeCliques = () => {
+            cliques++
+            $('#cliques').text('Cliques: ' + cliques)
+        }
+
+        $('body').on('click', mostrarQuantidadeDeCliques)
+
+        const backgroundOriginal = $('body').css('background-color')
+        
+        $('input[type="text"]').keyup(function (e) {
+            const valor = $(this).val()
+            if (valor.match(/#[\da-fA-F]{6}/) || valor.match(/#[\da-fA-F]{3}/)) {
+                $('body').css('background-color', valor)
+            } else {
+                $('body').css('background-color', backgroundOriginal)
+            }
+        })
+        $('input[type="color"]').change(function (){
+            const valor = $(this).val()
+            $('body').css('background-color', valor)
+            $('input[type="text"]').val(valor)
+        })
+        
     </script>
 </body>
