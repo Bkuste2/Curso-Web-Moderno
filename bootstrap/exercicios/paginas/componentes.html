@@ -145,6 +145,19 @@
 <hr>
 
 <!-- Tooltip -->
+<div>
+    <div class="alert alert-warning">
+        Precisa chamar um função JS!
+        <strong>E agora?</strong>
+    </div>
+
+    <button class="btn btn-danger"
+        data-toggle="tooltip" data-placement="right"
+        title="Pense antes!">
+        Excluir
+    </button>
+</div>
+
 
 <h1 class="mt-5">6. Slider -
     <small>
@@ -154,6 +167,36 @@
 <hr>
 
 <!-- Slider -->
+<div class="container-fluid bg-dark">
+    <div id="Slider" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <img src="/imgs/slide1.png" class="d-block mx-auto">
+          </div>
+
+          <div class="carousel-item">
+            <img src="/imgs/slide2.png" class="d-block mx-auto">
+          </div>
+
+          <div class="carousel-item">
+            <img src="/imgs/slide3.png" class="d-block mx-auto">
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#Slider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#Slider" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+</div>
 
 <h1 class="mt-5">7. Accordion -
     <small>
@@ -163,7 +206,50 @@
 <hr>
 
 <!-- Accordion -->
+<div>
+    <div class="mb-5" id="accordion">
+        <div class="card">
+            <div class="card-header" id="pergunta1">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#resposta1">
+                        Quem ta fazendo isso?
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta1" data-bs-parent="#accordion">
+                <div class="card-body">
+                    Eu :)
+                </div>
+            </div>
+            <div class="card-header" id="pergunta2">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#resposta2">
+                        Quem sou Eu?
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta2" data-bs-parent="#accordion">
+                <div class="card-body">
+                    Eu sou o igão
+                </div>
+            </div>
+            <div class="card-header" id="pergunta3">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#resposta3">
+                        Exemplo
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="resposta3" data-bs-parent="#accordion">
+                <div class="card-body">
+                    exemplo
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
-    // ...
+    $('[data-toggle="tooltip"]').tooltip()
 </script>
