@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import ReactDOM from 'react-dom'
-import Multiplos, {BoaNoite} from "./componentes/Multiplos";
+import Saudacao from "./componentes/Saudacao";
 
 // Nomes de componentes precisam começar com letra maiúscula!!!!!!!!!!!
 
@@ -8,7 +8,6 @@ import Multiplos, {BoaNoite} from "./componentes/Multiplos";
 
 ReactDOM.render(
     <Fragment>
-        <Multiplos.BoaTarde nome="Igor"/>
-        <BoaNoite nome="Igor"/>
+        <Saudacao tipo="Boa tarde" nome="Igão"></Saudacao>
     </Fragment>
 ,   document.getElementById('root'))
