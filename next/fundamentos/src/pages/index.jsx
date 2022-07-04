@@ -1,8 +1,9 @@
+import Link from "next/link";
+
 const Inicio = () => {
     return (
         <>
-            <h1>Fundamentos Next.js & React.js</h1>
-            <h2>Vamos estudar esse framework</h2>
+            <Link href="/estiloso">Oi</Link>
         </>
     )
 }
